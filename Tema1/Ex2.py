@@ -1,5 +1,5 @@
-import RedisManager
-import functools
+from RedisManager import RedisEntity
+import time
 
 
 def cacher(*args, **kwargs):
@@ -11,9 +11,9 @@ def cacher(*args, **kwargs):
                     expiration_time = kwargs['expiration_time']
             else:
                 expiration_time = args[0]
-            result = func(*args_func, **kwargs_func)
-            conenction.set(func.__name__, result, ex=expiration_time)
-            return result
+            func_result = func(*args_func, **kwargs_func)
+            redis_entity.setKey(func.__name__, func_result, expiration_time)
+            return func_result
 
         return wrapper
 
@@ -31,9 +31,12 @@ def functia_2(a, b):
 
 
 if __name__ == "__main__":
-    connection = RedisManager.redis_connect("localhost", 6379)
-    global conenction
+    global redis_entity
+    redis_entity = RedisEntity("localhost", 6379)
     result = functia_1(10, 10)
     print(result)
     result = functia_2(10, 10)
+    print(redis_entity.getKey('functia_1'))
+    time.sleep(180)
+    print(redis_entity.getKey('functia_1'))
     print(result)
