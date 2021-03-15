@@ -1,0 +1,10 @@
+{
+  "type_of_game": "texas_holden",
+  "number_of_players": 5,
+  "players": {
+    "1": "John",
+    "2": "John2",
+    "3": "John3"
+  },
+  "rounds" : 1
+}
