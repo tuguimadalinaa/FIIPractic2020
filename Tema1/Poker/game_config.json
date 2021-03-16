@@ -1,5 +1,5 @@
 {
-  "type_of_game": "texas_holden",
+  "type_of_game": "texas_holdem",
   "number_of_players": 5,
   "players": {
     "1": "John",

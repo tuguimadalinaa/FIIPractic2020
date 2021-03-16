@@ -17,6 +17,12 @@ class Deck:
             self._cards.remove(card)
         return to_return
 
+    def get_suits_in_given_cards(self, value):
+        return [card.suit for card in value]
+
+    def get_numbers_in_given_cards(self, value):
+        return [card.number for card in value]
+
     @property
     def cards(self):
         return self._cards

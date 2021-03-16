@@ -11,6 +11,16 @@ class Card:
     def __str__(self):
         return f"Card is {self._number} {self._suit}"
 
+    def __lt__(self, other):
+        faces = {"Queen": 11, "Jack": 12, "King": 13}
+        first_item = other._number
+        second_item = self._number
+        if isinstance(first_item, str):
+            first_item = faces[other._number]
+        if isinstance(self._number, str):
+            second_item = faces[self._number]
+        return second_item < first_item
+
     @property
     def number(self):
         return self._number
