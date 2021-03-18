@@ -6,8 +6,9 @@ class Player:
         self._id = id
         self.name = name
         self.chips = chips
-        self.total_value = 0
+        self.total_value = self.get_total_value()
         self.current_hand = None
+        self.wining_cards = None
         self._cards = []
         self._won_value = 0
         self._actions = ["Fold", "Raise", "Call"]
@@ -45,6 +46,7 @@ class Player:
     def bet(self):
         self.get_total_value()
         bet = random.randint(1, self.total_value)
+        self.total_value -= bet
         return bet
 
     @property

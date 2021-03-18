@@ -1,6 +1,6 @@
 {
   "type_of_game": "texas_holdem",
-  "number_of_players": 5,
+  "number_of_players": 8,
   "players": {
     "1": "John",
     "2": "John2",
