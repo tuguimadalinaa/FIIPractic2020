@@ -3,10 +3,18 @@ import json
 
 def print_dict(data):
     for key, value in data.items():
-        print(str(key), end=".")
+
         if type(value) == dict:
-            print_dict(value)
+            if len(value.items()) > 1:
+                for k, v in value.items():
+                    print(str(key), end=".")
+                    print_dict(dict({k: v}))
+
+            else:
+                print(str(key), end=".")
+                print_dict(value)
         else:
+            print(str(key), end=".")
             print(str(value), end="\n")
 
 
