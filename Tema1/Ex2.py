@@ -25,7 +25,7 @@ def functia_1(a, b):
     return a + b
 
 
-@cacher(expiration_time=120)
+@cacher()
 def functia_2(a, b):
     return a * b
 
