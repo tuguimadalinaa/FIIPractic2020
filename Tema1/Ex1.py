@@ -5,6 +5,8 @@ def calls_counter(func):
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
         ret = func(*args, **kwargs)
+        wrapper.calls += 1
+        print(wrapper.calls)
         return ret
     wrapper.calls = 0
     return wrapper
