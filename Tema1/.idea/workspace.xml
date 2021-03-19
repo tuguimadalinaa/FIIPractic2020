@@ -51,8 +51,8 @@
       <recent name="C:\Users\Madalina\PycharmProjects\FIIPractic2020\Tema1\Poker" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Ex5">
-    <configuration name="Ex5" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.ex4_2">
+    <configuration name="ex1_2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Tema1" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -64,7 +64,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ex5.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Madalina\PycharmProjects\FIIPractic2020\Tema1\ex1_2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -73,7 +73,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="card" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="ex2_2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Tema1" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -81,11 +81,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Poker" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Poker/card.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Madalina\PycharmProjects\FIIPractic2020\Tema1\ex2_2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -94,7 +94,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="cardsGenerator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="ex2_2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Tema1" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -102,11 +102,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Poker/generators" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Poker/generators/cardsGenerator.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Madalina\PycharmProjects\FIIPractic2020\Tema1\ex2_2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -115,7 +115,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="player" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="ex4_2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Tema1" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -123,11 +123,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Poker" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Poker/player.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Madalina\PycharmProjects\FIIPractic2020\Tema1\ex4_2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -136,7 +136,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="pokerEngine" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="ex5_2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Tema1" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -144,11 +144,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Poker" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Poker/pokerEngine.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Madalina\PycharmProjects\FIIPractic2020\Tema1\ex5_2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -159,11 +159,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Ex5" />
-        <item itemvalue="Python.pokerEngine" />
-        <item itemvalue="Python.card" />
-        <item itemvalue="Python.player" />
-        <item itemvalue="Python.cardsGenerator" />
+        <item itemvalue="Python.ex4_2" />
+        <item itemvalue="Python.ex2_2" />
+        <item itemvalue="Python.ex1_2" />
+        <item itemvalue="Python.ex5_2" />
+        <item itemvalue="Python.ex2_2" />
       </list>
     </recent_temporary>
   </component>
@@ -198,46 +198,46 @@
     </state>
     <state x="2660" y="275" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1616071425039" />
     <state x="592" y="218" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1615921250446" />
-    <state width="1515" height="260" key="GridCell.Tab.0.bottom" timestamp="1616090770800">
+    <state width="1515" height="264" key="GridCell.Tab.0.bottom" timestamp="1616174015636">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1899" height="260" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1616087135081" />
-    <state width="1515" height="260" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1616090770800" />
-    <state width="1515" height="260" key="GridCell.Tab.0.center" timestamp="1616090770800">
+    <state width="1899" height="434" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1616141447098" />
+    <state width="1515" height="264" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1616174015636" />
+    <state width="1515" height="264" key="GridCell.Tab.0.center" timestamp="1616174015636">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1899" height="260" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1616087135081" />
-    <state width="1515" height="260" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1616090770800" />
-    <state width="1515" height="260" key="GridCell.Tab.0.left" timestamp="1616090770800">
+    <state width="1899" height="434" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1616141447098" />
+    <state width="1515" height="264" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1616174015636" />
+    <state width="1515" height="264" key="GridCell.Tab.0.left" timestamp="1616174015636">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1899" height="260" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1616087135081" />
-    <state width="1515" height="260" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1616090770800" />
-    <state width="1515" height="260" key="GridCell.Tab.0.right" timestamp="1616090770800">
+    <state width="1899" height="434" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1616141447097" />
+    <state width="1515" height="264" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1616174015636" />
+    <state width="1515" height="264" key="GridCell.Tab.0.right" timestamp="1616174015636">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1899" height="260" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1616087135081" />
-    <state width="1515" height="260" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1616090770800" />
-    <state width="1899" height="347" key="GridCell.Tab.1.bottom" timestamp="1616086362219">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1899" height="434" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1616141447098" />
+    <state width="1515" height="264" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1616174015636" />
+    <state width="1528" height="334" key="GridCell.Tab.1.bottom" timestamp="1616162978723">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1899" height="347" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1616086362219" />
-    <state width="1515" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1615928592746" />
-    <state width="1899" height="347" key="GridCell.Tab.1.center" timestamp="1616086362219">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1899" height="434" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1616141447098" />
+    <state width="1528" height="334" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1616162978723" />
+    <state width="1528" height="334" key="GridCell.Tab.1.center" timestamp="1616162978723">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1899" height="347" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1616086362219" />
-    <state width="1515" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1615928592746" />
-    <state width="1899" height="347" key="GridCell.Tab.1.left" timestamp="1616086362219">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1899" height="434" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1616141447098" />
+    <state width="1528" height="334" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1616162978723" />
+    <state width="1528" height="334" key="GridCell.Tab.1.left" timestamp="1616162978723">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1899" height="347" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1616086362219" />
-    <state width="1515" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1615928592746" />
-    <state width="1899" height="347" key="GridCell.Tab.1.right" timestamp="1616086362219">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1899" height="434" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1616141447098" />
+    <state width="1528" height="334" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1616162978723" />
+    <state width="1528" height="334" key="GridCell.Tab.1.right" timestamp="1616162978723">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1899" height="347" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1616086362219" />
-    <state width="1515" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1615928592746" />
+    <state width="1899" height="434" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1616141447098" />
+    <state width="1528" height="334" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1616162978723" />
     <state x="578" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1615834406647">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -248,14 +248,11 @@
     <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1615747368943" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Ex5.py</url>
-          <line>105</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="value.keys()" language="Python" />
+        <watch expression="stiva" language="Python" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

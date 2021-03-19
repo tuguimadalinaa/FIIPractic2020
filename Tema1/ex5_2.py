@@ -1,10 +1,7 @@
-from Poker.generators import cardsGenerator, playersGenerator, chips_generator
+from Poker.generators import cards_generator, players_generator, chips_generator
 from Poker.deck import Deck
-from Poker.card import Card
-from Poker.pokerEngine import PokerEngine
+from Poker.poker_engine import PokerEngine
 import json
-from copy import deepcopy
-from collections import defaultdict
 
 
 def players_flow(players, poker_engine):
@@ -22,31 +19,9 @@ def players_flow(players, poker_engine):
         poker_engine.updateDeckBet(poker_engine.deck_bet + chips_value)
 
 
-def handle_one_pair(players_tie, players_hands):
-    players_card = 0
-    pass
-
-
-def manage_tie(players_tie, hand, players_hands):
-    if hand == "One Pair":
-        handle_one_pair(players_tie, players_hands)
-    print(players_tie)
-
-
-def declare_winner(players, hands_oredered):
-    players_hands = [player.current_hand for player in players]
-    for hand in hands_oredered:
-        if hand in players_hands:
-            if players_hands.count(hand) == 1:
-                print(hand)
-                # return players[players_hands.index(hand)]
-            elif players_hands.count(hand) > 1:
-                return manage_tie([player for player in players if player.current_hand == hand], hand, players_hands)
-
-
 if __name__ == "__main__":
     configurations = json.load(open("Poker/game_config.json", "r"))
-    cards = cardsGenerator.generate_cards()
+    cards = cards_generator.generate_cards()
     rounds = configurations["rounds"]
     chips_config = configurations["chips"]
     game_chips = list(chips_generator.generate_chips(chips_config))
@@ -57,7 +32,7 @@ if __name__ == "__main__":
             poker_engine = PokerEngine()
             deck = Deck(cards)
             deck.shuffle()
-            players = list(playersGenerator.generate_players(configurations["number_of_players"], game_chips))
+            players = list(players_generator.generate_players(configurations["number_of_players"], game_chips))
             poker_engine.updatePlayers(players)
             sb = players[0].bet()
             poker_engine.updateBet(sb)
@@ -104,4 +79,5 @@ if __name__ == "__main__":
                 print("Winner is: ", poker_engine.players[0])
                 continue
             poker_engine.showdown(deck)
-            poker_engine.declare_winner()
+            winner = poker_engine.declare_winner()
+            print("Winner is: ", winner)

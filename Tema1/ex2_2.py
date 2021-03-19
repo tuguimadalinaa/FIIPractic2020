@@ -1,4 +1,4 @@
-from RedisManager import RedisEntity
+from redis_manager import RedisEntity
 import time
 
 
