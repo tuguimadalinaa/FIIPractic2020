@@ -1,4 +1,4 @@
-from Poker.pokerRules import PokerRules
+from Poker.poker_rules import PokerRules
 
 
 class PokerEngine(PokerRules):
@@ -28,7 +28,10 @@ class PokerEngine(PokerRules):
 
     def declare_winner(self):
         players_hands = [self.hands_oredered[player.current_hand] for player in self.players]
-        print(players_hands)
         index = players_hands.index(min(players_hands))
-        print(index)
-        pass
+        winning_hand = self.players[index].current_hand
+        is_same_hand = len([True for player in self.players if player.current_hand == winning_hand])
+        if is_same_hand == 1:
+            return self.players[index]
+        else:
+            return self.handle_tie(winning_hand, self.players)

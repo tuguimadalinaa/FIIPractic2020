@@ -1,12 +1,6 @@
 {
   "type_of_game": "texas_holdem",
   "number_of_players": 8,
-  "players": {
-    "1": "John",
-    "2": "John2",
-    "3": "John3"
-  },
-  "entry_sum" : 2,
   "rounds": 1,
   "chips": {
     "1": 100,

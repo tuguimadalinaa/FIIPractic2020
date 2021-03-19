@@ -7,8 +7,8 @@ class Player:
         self.name = name
         self.chips = chips
         self.total_value = self.get_total_value()
-        self.current_hand = None
-        self.wining_cards = None
+        self._current_hand = None
+        self._wining_cards = None
         self._cards = []
         self._won_value = 0
         self._actions = ["Fold", "Raise", "Call"]
@@ -33,7 +33,6 @@ class Player:
         elif action == "Call":
             return action, current_bet
         elif action == "Raise":
-            # de refacut si check pe chipsuri
             random_bet = self.total_value
             tries = 10
             while random_bet < current_bet:
@@ -49,6 +48,13 @@ class Player:
         self.total_value -= bet
         return bet
 
+    def get_total_value(self):
+        total = 0
+        for c in self.chips:
+            total += c.value
+        self.total_value = total
+        return total
+
     @property
     def id(self):
         return self._id
@@ -61,9 +67,10 @@ class Player:
     def cards(self, value):
         self._cards = list(value)
 
-    def get_total_value(self):
-        total = 0
-        for c in self.chips:
-            total += c.value
-        self.total_value = total
-        return total
+    @property
+    def current_hand(self):
+        return self._current_hand
+
+    @property
+    def wining_cards(self):
+        return self._wining_cards

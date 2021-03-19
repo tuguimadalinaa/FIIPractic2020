@@ -25,7 +25,6 @@ if __name__ == "__main__":
     rounds = configurations["rounds"]
     chips_config = configurations["chips"]
     game_chips = list(chips_generator.generate_chips(chips_config))
-    current_bet = configurations["entry_sum"]
 
     if configurations["type_of_game"] == "texas_holdem":
         for round in range(rounds):
