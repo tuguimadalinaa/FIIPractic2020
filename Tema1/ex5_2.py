@@ -79,4 +79,4 @@ if __name__ == "__main__":
                 continue
             poker_engine.showdown(deck)
             winner = poker_engine.declare_winner()
-            print("Winner is: ", winner)
+            print("Winner is final: ", winner)

@@ -2,7 +2,6 @@ from Poker.player import Player
 import uuid
 import string
 import random
-from Poker.chips import Chips
 
 letters = string.ascii_lowercase
 

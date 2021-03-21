@@ -71,6 +71,14 @@ class Player:
     def current_hand(self):
         return self._current_hand
 
+    @current_hand.setter
+    def current_hand(self, value):
+        self._current_hand = value
+
     @property
     def wining_cards(self):
         return self._wining_cards
+
+    @wining_cards.setter
+    def wining_cards(self, value):
+        self._wining_cards = value

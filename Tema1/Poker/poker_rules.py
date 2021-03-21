@@ -123,22 +123,6 @@ class PokerRules:
             return False
         return True
 
-    def handle_one_pair(self, players):
-        max_cards = [max(player.wining_cards, key=lambda card: card.number) for player in players]
-        max_card_index = max_cards.index(max(max_cards))
-        return players[max_card_index]
-
-    def handle_two_pair(self, players):
-        pass
-
-    def handle_tie(self, hand, players):
-        if hand == "One Pair":
-            return self.handle_one_pair(players)
-        if hand == "Two Pair":
-            return self.handle_two_pair(players)
-        if hand == "None":
-            return []
-        return players
 
     def get_hand(self, revealed_cards, cards, player, deck):
         if self.is_royal_flush(revealed_cards, cards, deck):
