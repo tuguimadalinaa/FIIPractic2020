@@ -3,11 +3,13 @@ import json
 from flask import request, Blueprint, Response
 from src.utils.decorators import session, http_handling
 from src.models.company import Company
+from src.utils.exceptions import Conflict
 
 companies_bp = Blueprint('companies', __name__, url_prefix='/companies')
 
 
 @companies_bp.route('', methods=['GET'])
+@http_handling
 @session
 def get_companies(context):
     companies = Company.get_companies(context)
@@ -15,13 +17,15 @@ def get_companies(context):
 
 
 @companies_bp.route('/<int:company_id>', methods=['GET'])
+@http_handling
 @session
 def get_company_by_id(context, company_id):
-    company = Company.get_company_by_id(context, company_id)
-    return Response(status=200, response=json.dumps(company))
+    response = Company.get_company_by_id(context, company_id)
+    return Response(status=200, response=json.dumps(response))
 
 
 @companies_bp.route('', methods=['POST'])
+@http_handling
 @session
 def post_company(context):
     body = request.json
@@ -30,19 +34,21 @@ def post_company(context):
 
 
 @companies_bp.route('/<int:company_id>', methods=["PUT"])
+@http_handling
 @session
 def put_company(context, company_id):
     body = request.json
     Company.put_company(context, body, company_id)
-    return Response(status=200, response="Resource updated completely")
+    return Response(status=200, response="Resource updated with put")
 
 
 @companies_bp.route('/<int:company_id>', methods=["PATCH"])
+@http_handling
 @session
 def patch_company(context, company_id):
     body = request.json
     Company.patch_company(context, body, company_id)
-    return Response(status=200, response="Resource updated partial")
+    return Response(status=200, response="Resource updated with patch")
 
 
 @companies_bp.route('/<int:company_id>', methods=['DELETE'])

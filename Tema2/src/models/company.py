@@ -28,12 +28,16 @@ class Company(Base, CompanyAdapter):
     @classmethod
     def put_company(cls, context, body, company_id):
         company = cls.get_company_dbEntity_by_id(context, company_id)
+        if not company:
+            raise Conflict(404, status="The user you are trying to update does not exist")
         company.to_object(body)
         context.commit()
 
     @classmethod
     def patch_company(cls, context, body, company_id):
         company = cls.get_company_dbEntity_by_id(context, company_id)
+        if not company:
+            raise Conflict(404, status="The user you are trying to update does not exist")
         company.to_object(body)
         context.commit()
 
@@ -45,13 +49,13 @@ class Company(Base, CompanyAdapter):
     def get_company_by_id(cls, context, company_id):
         company = cls.get_company_dbEntity_by_id(context, company_id)
         if not company:
-            return Conflict("The company you are trying to get does not exist", 404)
+            raise Conflict(404, status="The company you are trying to get does not exist")
         return cls.to_json([company])
 
     @classmethod
     def hard_delete_company(cls, context, company_id):
         company = cls.get_company_dbEntity_by_id(context, company_id)
         if not company:
-            return Conflict("The company you are trying to delete does not exist", 404)
+            raise Conflict(404, status="The company you are trying to delete does not exist")
         context.delete(company)
         context.commit()

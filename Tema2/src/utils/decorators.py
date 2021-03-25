@@ -4,7 +4,6 @@ import functools
 from flask import Response
 from database_management import get_database_session
 
-
 logger = logging.getLogger(__name__)
 
 
@@ -20,6 +19,7 @@ def session(func):
             raise e
         finally:
             context.close()
+
     return wrapper
 
 
@@ -30,7 +30,6 @@ def http_handling(func):
             return func(*args, **kwargs)
         except Exception as e:
             logger.error(e)
-            status = getattr(e, "status", 500)
-            return Response(status=status, response=json.dumps({"error": e.args[0]}))
+            return Response(status=e.args[0], response=json.dumps({"error": e.status}))
 
     return wrapper
