@@ -30,6 +30,8 @@ def http_handling(func):
             return func(*args, **kwargs)
         except Exception as e:
             logger.error(e)
-            return Response(status=e.args[0], response=json.dumps({"error": e.status}))
-
+            if hasattr(e, 'status'):
+                return Response(status=e.args[0], response=json.dumps({"error": e.status}))
+            else:
+                return Response(status= 500, response=json.dumps({"error": e.args[0]}))
     return wrapper

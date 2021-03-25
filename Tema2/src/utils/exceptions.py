@@ -7,10 +7,6 @@ class Conflict(Exception):
         del kwargs["status"]
         super().__init__(*args, **kwargs)
 
-    def to_dict(self):
-        response = dict()
-        response['error'] = self.status
-        return response
 
 
 class InvalidBody(Exception):
