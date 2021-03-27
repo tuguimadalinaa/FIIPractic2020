@@ -19,3 +19,9 @@ def validate_email(email):
     if not result:
         raise InvalidBody("Email address is not valid", status=400)
 
+
+def validate_company_body(body, method):
+    company_keys = ["name", "country", "city", "street"]
+    if method == "PUT":
+        if list(body.keys()) != company_keys:
+            raise InvalidBody("PUT needs to contain all properties of entity company", status=400)

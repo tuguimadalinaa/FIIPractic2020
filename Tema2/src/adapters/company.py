@@ -1,15 +1,20 @@
 class CompanyAdapter:
     @staticmethod
-    def to_json(results):
+    def to_json_from_list(results):
         return [
-            {
-                "id": company.id,
-                "name": company.name,
-                "street": company.street,
-                "city": company.city,
-                "country": company.country
-            } for company in results
+            CompanyAdapter.to_json_from_entity(company)
+            for company in results
         ]
+
+    @staticmethod
+    def to_json_from_entity(company):
+        return {
+            "id": company.id,
+            "name": company.name,
+            "street": company.street,
+            "city": company.city,
+            "country": company.country
+        }
 
     def to_object(self, body):
         for key, value in body.items():

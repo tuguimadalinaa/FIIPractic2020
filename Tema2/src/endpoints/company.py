@@ -3,7 +3,7 @@ import json
 from flask import request, Blueprint, Response
 from src.utils.decorators import session, http_handling
 from src.models.company import Company
-from src.utils.exceptions import Conflict
+
 
 companies_bp = Blueprint('companies', __name__, url_prefix='/companies')
 
