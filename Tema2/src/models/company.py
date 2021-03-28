@@ -29,34 +29,34 @@ class Company(Base, CompanyAdapter):
     @classmethod
     def put_company(cls, context, body, company_id):
         validate_company_body(body, "PUT")
-        company = cls.get_company_dbEntity_by_id(context, company_id)
+        company = cls.__get_company_entity_by_id(context, company_id)
         if not company:
-            raise Conflict("The user you are trying to update does not exist", status=404)
+            raise Conflict("The company you are trying to update does not exist", status=404)
         company.to_object(body)
         context.commit()
 
     @classmethod
     def patch_company(cls, context, body, company_id):
-        company = cls.get_company_dbEntity_by_id(context, company_id)
+        company = cls.__get_company_entity_by_id(context, company_id)
         if not company:
-            raise Conflict("The user you are trying to update does not exist", status=404)
+            raise Conflict("The company you are trying to update does not exist", status=404)
         company.to_object(body)
         context.commit()
 
     @classmethod
-    def get_company_dbEntity_by_id(cls, context, company_id):
+    def __get_company_entity_by_id(cls, context, company_id):
         return context.query(cls).filter_by(id=company_id).first()
 
     @classmethod
     def get_company_by_id(cls, context, company_id):
-        company = cls.get_company_dbEntity_by_id(context, company_id)
+        company = cls.__get_company_entity_by_id(context, company_id)
         if not company:
             raise Conflict("The company you are trying to get does not exist", status=404)
         return cls.to_json_from_entity(company)
 
     @classmethod
     def hard_delete_company(cls, context, company_id):
-        company = cls.get_company_dbEntity_by_id(context, company_id)
+        company = cls.__get_company_entity_by_id(context, company_id)
         if not company:
             raise Conflict("The company you are trying to delete does not exist", status=404)
         context.delete(company)
