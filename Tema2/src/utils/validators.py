@@ -4,8 +4,8 @@ from src.utils.exceptions import InvalidBody
 
 
 def validate_user_body(body):
-    validate_email(body["email"])
-    validate_password(body["password"])
+    validate_email(body.get("email"))
+    validate_password(body.get("password"))
 
 
 def validate_password(password):
@@ -25,3 +25,10 @@ def validate_company_body(body, method):
     if method == "PUT":
         if list(body.keys()) != company_keys:
             raise InvalidBody("PUT needs to contain all properties of entity company", status=400)
+
+
+def validate_company_assigned(body):
+    try:
+        _, _ = body['user'], body['company']
+    except KeyError:
+        raise Exception("You must provide a company and an user")

@@ -1,7 +1,7 @@
 import json
 from flask import request, Blueprint, Response
 from src.models.user import User
-from src.utils.decorators import session, http_handling
+from src.utils.decorators import session, http_handling, is_authorized, is_admin_or_self, is_admin, action_log
 
 user_bp = Blueprint('users', __name__, url_prefix='/users')
 
@@ -9,9 +9,10 @@ user_bp = Blueprint('users', __name__, url_prefix='/users')
 @user_bp.route('', methods=['GET'])
 @http_handling
 @session
-def get_users(context):
-    users = User.get_users(context)
-    return Response(status=200, response=json.dumps(users))
+@is_authorized
+def get_users(context, user):
+    users = User.get_users(context, request)
+    return Response(content_type='application/json', status=200, response=json.dumps(users))
 
 
 @user_bp.route('', methods=['POST'])
@@ -26,7 +27,10 @@ def post_user(context):  # register
 @user_bp.route('/<int:user_id>', methods=['PUT'])
 @http_handling
 @session
-def put_user(context, user_id):
+@is_authorized
+@is_admin_or_self
+@action_log(action="UPDATE USER")
+def put_user(context, user_id, user):
     body = request.json
     User.update_user(context, body, user_id)
     return Response(status=200, response="Resource updated")
@@ -35,6 +39,9 @@ def put_user(context, user_id):
 @user_bp.route('/<int:user_id>', methods=['DELETE'])
 @http_handling
 @session
-def delete_user(context, user_id):
+@is_authorized
+@is_admin
+@action_log(action="DELETE USER")
+def delete_user(context, user_id, user):
     User.deactivate_user(context, user_id)
-    return Response(status=200, response="Resource deleted")
+    return Response(status=200, response="Resource deleted", content_type="application/json")
