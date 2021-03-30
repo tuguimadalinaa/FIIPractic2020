@@ -3,6 +3,7 @@ from sqlalchemy import Column, ForeignKey, Integer, PrimaryKeyConstraint
 from src.adapters.user_company import UserCompanyAdapter
 from src.models.base import Base
 from src.utils.validators import validate_company_assigned
+from src.utils.exceptions import Conflict
 
 
 class UserCompany(Base, UserCompanyAdapter):
@@ -16,17 +17,23 @@ class UserCompany(Base, UserCompanyAdapter):
     def get_company_by_id(cls, context, company_id):
         return context.query(cls).filter_by(id=company_id).first()
 
-    def add_user_company_entry(self, context, company_id, user_id):
+    @classmethod
+    def add_user_company_entry(cls, context, company_id, user_id):
         uc = UserCompany()
         uc.user_id = user_id
         uc.company_id = company_id
         context.add(uc)
         context.commit()
 
-    def assign_to_company(self, context, company_id, body):
+    @classmethod
+    def assign_to_company(cls, context, company_id, body):
         body['company'] = company_id
         validate_company_assigned(body)
-        self.add_user_company_entry(context, company_id, body['user_id'])
+        users_at_same_company = cls.get_company_users(context, company_id)
+        if len(users_at_same_company) > 0:
+            if body['user_id'] in users_at_same_company[0].values():
+                raise Conflict("User and company already added", status = 400)
+        cls.add_user_company_entry(context, company_id, body['user_id'])
         context.commit()
 
     @classmethod

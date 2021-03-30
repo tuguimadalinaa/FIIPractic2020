@@ -1,6 +1,6 @@
 class UserCompanyAdapter:
     @staticmethod
-    def to_json_from_list(results):
+    def to_json(results):
         return [
             {
                 "company_id": user_company.company_id,

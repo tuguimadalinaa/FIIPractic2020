@@ -18,6 +18,7 @@ def get_users(context, user):
 @user_bp.route('', methods=['POST'])
 @http_handling
 @session
+@is_authorized
 def post_user(context):  # register
     body = request.json
     User.create_user(context, body)

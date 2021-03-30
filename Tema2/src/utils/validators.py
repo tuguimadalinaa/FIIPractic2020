@@ -29,6 +29,7 @@ def validate_company_body(body, method):
 
 def validate_company_assigned(body):
     try:
-        _, _ = body['user'], body['company']
+        _, _ = body['user_id'], body['company']
+
     except KeyError:
         raise Exception("You must provide a company and an user")

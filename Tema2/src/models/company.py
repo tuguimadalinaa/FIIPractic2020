@@ -61,3 +61,4 @@ class Company(Base, CompanyAdapter):
             raise Conflict("The company you are trying to delete does not exist", status=404)
         context.delete(company)
         context.commit()
+
