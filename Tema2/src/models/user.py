@@ -40,6 +40,13 @@ class User(Base, UserAdapter, Rest):
         return cls.to_json(total, results)
 
     @classmethod
+    def get_user(cls, context, user_id):
+        user = cls.get_user_by_id(context, user_id)
+        if not user:
+            raise Conflict("The user you are trying to update does not exist", status=404)
+        return cls.to_json(1, [user])
+
+    @classmethod
     def create_user(cls, context, body):
         validate_user_body(body)
         if cls.get_user_by_email(context, body.get("email")):
@@ -54,7 +61,7 @@ class User(Base, UserAdapter, Rest):
         # validate_user_body(body)
         user = cls.get_user_by_id(context, user_id)
         if not user:
-            return Conflict("The user you are trying to update does not exist", 404)
+            raise Conflict("The user you are trying to update does not exist", status=404)
         user.to_object(body)
         context.commit()
 
@@ -62,7 +69,7 @@ class User(Base, UserAdapter, Rest):
     def deactivate_user(cls, context, user_id):
         user = cls.get_user_by_id(context, user_id)
         if not user:
-            return Conflict("The user you are trying to update does not exist", 404)
+            raise Conflict("The user you are trying to update does not exist", status=404)
         user.active = False
         context.commit()
 

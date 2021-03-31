@@ -2,6 +2,7 @@ from sqlalchemy import Column, ForeignKey, Integer, PrimaryKeyConstraint
 
 from src.adapters.user_company import UserCompanyAdapter
 from src.models.base import Base
+from src.models.company import Company
 from src.models.user import User
 from src.utils.validators import validate_company_assigned
 from src.utils.exceptions import Conflict, HTTPException
@@ -33,7 +34,9 @@ class UserCompany(Base, UserCompanyAdapter):
         user = User.get_user_by_id(context, body['user_id'])
 
         if not user:
-            raise HTTPException("User does not exist", status=404)
+            raise HTTPException("User or company does not exist", status=404)
+
+        Company.get_company_by_id(context, company_id)
 
         users_at_same_company = cls.get_company_users(context, company_id)
         if len(users_at_same_company) > 0:

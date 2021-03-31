@@ -20,7 +20,7 @@ def get_users(context, user):
 @session
 @is_authorized
 def get_user_by_id(context, user_id, user):
-    users = User.get_user_by_id(context, user_id)
+    users = User.get_user(context, user_id)
     return Response(content_type='application/json', status=200, response=json.dumps(users))
 
 
@@ -31,7 +31,8 @@ def get_user_by_id(context, user_id, user):
 def post_user(context, user):  # register
     body = request.json
     User.create_user(context, body)
-    return Response(status=201, response="Resource created")
+    return Response(status=201, response=json.dumps({"message": "Resource created"}),
+                    content_type='application/json')
 
 
 @user_bp.route('/<int:user_id>', methods=['PUT'])
@@ -43,7 +44,8 @@ def post_user(context, user):  # register
 def put_user(context, user_id, user):
     body = request.json
     User.update_user(context, body, user_id)
-    return Response(status=200, response="Resource updated")
+    return Response(status=200, response=json.dumps({"message": "Resource updated"}),
+                    content_type='application/json')
 
 
 @user_bp.route('/<int:user_id>', methods=['DELETE'])
@@ -54,4 +56,5 @@ def put_user(context, user_id, user):
 @action_log(action="DELETE USER")
 def delete_user(context, user_id, user):
     User.deactivate_user(context, user_id)
-    return Response(status=200, response="Resource deleted", content_type="application/json")
+    return Response(status=200, response=json.dumps({"message": "Resource deleted"}),
+                    content_type='application/json')
