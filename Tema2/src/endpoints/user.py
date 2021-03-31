@@ -19,7 +19,7 @@ def get_users(context, user):
 @http_handling
 @session
 @is_authorized
-def post_user(context):  # register
+def post_user(context, user):  # register
     body = request.json
     User.create_user(context, body)
     return Response(status=201, response="Resource created")

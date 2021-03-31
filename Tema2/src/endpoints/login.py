@@ -20,5 +20,7 @@ def login(context):
 @http_handling
 def logout(context):
     session_id = request.headers.get('Authorization')
+    if not session_id:
+        return Response(response=json.dumps({'message': 'User not found'}), status=400)
     User.logout(context, session_id)
     return Response(response=json.dumps({'message': 'Logged out successfully'}), status=200)
