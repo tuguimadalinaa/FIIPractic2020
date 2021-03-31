@@ -1,10 +1,13 @@
 class CompanyAdapter:
     @staticmethod
-    def to_json_from_list(results):
-        return [
-            CompanyAdapter.to_json_from_entity(company)
-            for company in results
-        ]
+    def to_json_from_list(total, results):
+        return {
+            "total": total,
+            "items": [
+                CompanyAdapter.to_json_from_entity(company)
+                for company in results
+            ]
+        }
 
     @staticmethod
     def to_json_from_entity(company):

@@ -14,7 +14,7 @@ company_bp = Blueprint('companies', __name__, url_prefix='/companies')
 @session
 @is_authorized
 def get_companies(context, user):
-    companies = Company.get_companies(context)
+    companies = Company.get_companies(context, request)
     return Response(status=200, response=json.dumps(companies), content_type='application/json')
 
 

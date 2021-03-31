@@ -1,12 +1,15 @@
 from sqlalchemy import Column, String, Integer
 from src.adapters.company import CompanyAdapter
 from src.models.base import Base
+from src.models.rest import Rest
 from src.utils.exceptions import Conflict
 from src.utils.validators import validate_company_body
 
 
-class Company(Base, CompanyAdapter):
+class Company(Base, CompanyAdapter, Rest):
     __tablename__ = 'company'
+    search_fields = ["name", "street", "city", "country"]
+
 
     id = Column(Integer, primary_key=True)
     name = Column(String(200))
@@ -15,9 +18,14 @@ class Company(Base, CompanyAdapter):
     country = Column(String(100))
 
     @classmethod
-    def get_companies(cls, context):
-        results = context.query(cls).all()
-        return cls.to_json_from_list(results)
+    def get_companies(cls, context, request):
+        query = context.query(cls)
+        query = cls.add_search(query, request)
+        total = query.count()
+        query = query.order_by(cls.id)
+        query = cls.add_pagination(query, request)
+        results = query.all()
+        return cls.to_json_from_list(total, results)
 
     @classmethod
     def create_company(cls, context, body):
@@ -61,4 +69,3 @@ class Company(Base, CompanyAdapter):
             raise Conflict("The company you are trying to delete does not exist", status=404)
         context.delete(company)
         context.commit()
-

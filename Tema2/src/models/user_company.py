@@ -2,8 +2,9 @@ from sqlalchemy import Column, ForeignKey, Integer, PrimaryKeyConstraint
 
 from src.adapters.user_company import UserCompanyAdapter
 from src.models.base import Base
+from src.models.user import User
 from src.utils.validators import validate_company_assigned
-from src.utils.exceptions import Conflict
+from src.utils.exceptions import Conflict, HTTPException
 
 
 class UserCompany(Base, UserCompanyAdapter):
@@ -29,10 +30,16 @@ class UserCompany(Base, UserCompanyAdapter):
     def assign_to_company(cls, context, company_id, body):
         body['company'] = company_id
         validate_company_assigned(body)
+        user = User.get_user_by_id(context, body['user_id'])
+
+        if not user:
+            raise HTTPException("User does not exist", status=404)
+
         users_at_same_company = cls.get_company_users(context, company_id)
         if len(users_at_same_company) > 0:
-            if body['user_id'] in users_at_same_company[0].values():
-                raise Conflict("User and company already added", status = 400)
+            if body['user_id'] in [user['user_id'] for user in users_at_same_company]:
+                raise Conflict("User and company already added", status=400)
+
         cls.add_user_company_entry(context, company_id, body['user_id'])
         context.commit()
 

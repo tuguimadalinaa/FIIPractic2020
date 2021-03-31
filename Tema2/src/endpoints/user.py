@@ -15,6 +15,15 @@ def get_users(context, user):
     return Response(content_type='application/json', status=200, response=json.dumps(users))
 
 
+@user_bp.route('/<int:user_id>', methods=['GET'])
+@http_handling
+@session
+@is_authorized
+def get_user_by_id(context, user_id, user):
+    users = User.get_user_by_id(context, user_id)
+    return Response(content_type='application/json', status=200, response=json.dumps(users))
+
+
 @user_bp.route('', methods=['POST'])
 @http_handling
 @session
